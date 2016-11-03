@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+#import numpy as np
+from ggplot import *
+
+
+
+
+dfs = pd.read_excel("apStudentStatsNoName.xlsx", sheetname= "apStudentStats")
+dfc = pd.read_excel("apStudentStatsNoName.xlsx", sheetname= "apCourseStats")
+ggplot(dfs, aes(x='apGrade',y='quizAv'))+\
+geom_point()
+
+def datetime_from_year(years):
+    if type(years)==str:
+        years=int(years)
+    dts = pd.datetime(years, 5, 10)
+    return dts
+    
+    
+dfs.index = dfs['testYear'].apply(datetime_from_year)
+    
+   
+   # ggplot(df, aes(x, y = value, color = variable)) + 
+#    geom_point(aes(y = y1, col = "y1")) + 
+ #   geom_point(aes(y = y2, col = "y2"))
+

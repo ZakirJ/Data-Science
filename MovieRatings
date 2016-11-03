@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+line = plt.figure()
+
+df = pd.read_csv("MovieRating_avgRatingByAgeByGender.csv")
+plt.plot('age',df['avg rating'])
+len('avg rating')
